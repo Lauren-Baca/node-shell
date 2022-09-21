@@ -1,3 +1,5 @@
+const { pwd } = require('./pwd.js');
+const { ls } = require('./ls.js');
 process.stdout.write('prompt > ');
 
 process.stdin.on('data', (data) => {
@@ -5,7 +7,9 @@ process.stdin.on('data', (data) => {
 
     
     if (cmd === 'pwd') {
-        process.stdout.write(__dirname)
+        pwd();
+    } if (cmd === 'ls') {
+        ls();
     } else { 
         process.stdout.write('You typed: ' + cmd);
     }
